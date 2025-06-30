@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: auto;
+    height: 10000px;
+    background-color: green;
+}
+
+div {
+    border: 20px solid red;
+    height: 100vh;
+    position: relative;
+}
+
+
+.position1 {
+    position: absolute;
+    /* bottom: 0px; */
+    top: 0px;
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    /* right: 50px */
+    left: 500px;
+}
