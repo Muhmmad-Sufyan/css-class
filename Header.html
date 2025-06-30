@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Header</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #222;
+        }
+        .animated-header {
+            width: 100%;
+            padding: 40px 0;
+            background: linear-gradient(90deg, #4e54c8, #8f94fb);
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .animated-header h1 {
+            font-size: 3rem;
+            color: #fff;
+            letter-spacing: 2px;
+            margin: 0;
+            animation: slideIn 2s cubic-bezier(.68,-0.55,.27,1.55);
+            position: relative;
+            z-index: 1;
+        }
+        .animated-header::before {
+            content: '';
+            position: absolute;
+            left: -50%;
+            top: 0;
+            width: 200%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                120deg,
+                rgba(255,255,255,0.05) 0px,
+                rgba(255,255,255,0.05) 2px,
+                transparent 2px,
+                transparent 40px
+            );
+            animation: moveBg 4s linear infinite;
+            z-index: 0;
+        }
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-60px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes moveBg {
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="animated-header">
+        <h1>Welcome to My Website</h1>
+    </header>
+</body>
+</html>
